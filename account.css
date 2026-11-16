@@ -1,0 +1,30 @@
+.account-module{direction:rtl;text-align:right;display:grid;gap:16px;min-width:0;margin-top:25px;padding-bottom:30px}
+.account-module *{min-width:0}
+.account-module h2,.account-module p{margin:0}
+.account-card{border:1px solid #a5bd8534;border-radius:20px;padding:22px 19px;background:linear-gradient(135deg,#25371d87,#152019);overflow-wrap:anywhere}
+.account-status-card{background:radial-gradient(ellipse at 95% 0,#638b322f,transparent 70%),#1a281b;border-color:#a8d2784c}
+.account-status-badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;line-height:1.6;font-weight:700;color:#bddf9f;background:#45652b45;border:1px solid #a9d17738;padding:6px 10px;border-radius:99px}
+.account-status-badge:before{content:"";width:6px;height:6px;flex-shrink:0;border-radius:50%;background:currentColor}
+.account-status-card.is-pending .account-status-badge,.account-status-card.is-offline .account-status-badge,.account-status-card.is-conflict .account-status-badge,.account-status-card.is-account-mismatch .account-status-badge{color:#e4cba1;background:#7f5a2736;border-color:#d7ad6240}
+.account-status-card.is-syncing .account-status-badge,.account-status-card.is-checking .account-status-badge{color:#accce5;background:#29496855;border-color:#6796b74a}
+.account-status-copy{margin-top:17px!important;font-size:16px;line-height:1.85;color:#e1ecd8}
+.account-identity{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding-top:18px;margin-top:19px;border-top:1px solid #b1cb932b}
+.account-identity>strong{font-size:16px;line-height:1.6;color:#d3e4c3}
+.account-identity>bdi{font-family:Arial,sans-serif;font-size:12px;line-height:1.6;color:#98b08a;overflow-wrap:anywhere;max-width:100%}
+.account-sync-time{font-size:11px;line-height:1.8;color:#94ab85;margin-top:15px!important}
+.account-actions{display:flex;flex-direction:column;gap:14px}
+.account-actions h2{font-size:20px;line-height:1.5;letter-spacing:-.3px;color:#e2edd7}
+.account-actions>p{font-size:13px;line-height:1.9;color:#a8bd97}
+.account-button{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;border-radius:13px;padding:13px 16px;background:var(--green,#abfa57);border:1px solid transparent;color:#17210f;font:inherit;font-size:15px;font-weight:700;line-height:1.7;text-align:center;text-decoration:none;cursor:pointer}
+.account-button:hover{background:#bdf97f}
+.account-button.is-secondary{background:#273b1c70;color:#c4dea9;border-color:#a5c77650}
+.account-button.is-secondary:hover{background:#3c532b}
+.account-button:disabled{opacity:.5;cursor:wait}
+.account-button:focus-visible{outline:2px solid var(--green,#abfa57);outline-offset:4px}
+.account-version-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.account-version{padding:14px 11px;border-radius:12px;border:1px solid #a7bf8136;background:#172119}
+.account-version>strong{font-size:13px;line-height:1.6;color:#d2e4bc}
+.account-version>p{font-size:11px;line-height:1.85;color:#94ab82;margin-top:7px}
+.account-actions>.account-storage-warning{padding:12px;border-radius:11px;border:1px solid #c8a36d52;background:#5a43212f;color:#e1c69b;font-size:12px}
+.account-actions>.account-note{font-size:11px;color:#8fa481;padding-top:3px}
+@media(max-width:359px){.account-card{padding:18px 14px}.account-status-copy{font-size:15px}.account-button{font-size:14px;padding-inline:11px}.account-version-list{gap:8px}.account-version{padding:12px 9px}.account-actions h2{font-size:19px}}

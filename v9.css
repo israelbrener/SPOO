@@ -1,0 +1,28 @@
+/* V9: generous, uncluttered birth-date experience */
+.v8-birthdate-trigger{min-height:76px!important;padding:18px 20px!important;gap:16px!important;font-size:19px!important;border-radius:20px!important}
+.v8-date-trigger-icon{width:45px!important;height:45px!important;flex-basis:45px!important;font-size:27px!important}
+.v8-date-field-hint{font-size:14px!important;line-height:1.7!important}
+.v8-date-overlay{align-items:center!important;padding:12px!important}
+.v8-date-sheet{width:min(100%,590px)!important;max-height:calc(100dvh - 24px)!important;border-radius:25px!important;border:1px solid #679575!important;padding:clamp(20px,4vw,36px)!important;box-shadow:0 20px 90px #000b!important}
+.v8-date-head h2{font-size:clamp(27px,6vw,36px)!important}
+.v8-date-head p{font-size:16px!important}
+.v8-date-progress{gap:12px!important;margin:25px 0!important}
+.v8-date-progress span{padding:15px 10px!important;font-size:16px!important}
+.v8-date-contents h3{font-size:25px!important;margin-bottom:10px!important}
+.v8-date-contents .v8-date-help{font-size:16px!important;margin-bottom:22px!important}
+.v8-year-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+.v8-year-grid .v8-date-option{min-height:62px!important;font-size:21px!important}
+.v8-month-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+.v8-month-grid .v8-date-option{min-height:64px!important;font-size:18px!important}
+.v8-day-grid{gap:7px!important}
+.v8-day-option{min-height:48px!important;font-size:17px!important;border-radius:12px!important}
+.v8-date-footer{font-size:14px!important;margin-top:26px!important}
+.v9-quick-year{display:grid;gap:10px;margin:0 0 25px;padding:19px;border:1px solid #497b59;border-radius:17px;background:#12261a}
+.v9-quick-year label{font-size:17px;font-weight:700;color:#eaffef}
+.v9-quick-year-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+.v9-quick-year input{min-width:0;width:100%;height:57px;padding:10px 15px;font-size:22px;border-radius:12px;border:1px solid #87bd94;background:#1e3727;color:#fff;text-align:center;direction:ltr}
+.v9-quick-submit{min-height:57px;padding:10px 17px;background:#a8f65c;color:#122416;font-size:16px;font-weight:800;border:0;border-radius:12px}
+.v9-year-error{color:#ffb2a8;font-size:14px}
+.v9-achievements{margin:20px 0;padding:20px;border:1px solid #b7e36b;border-radius:20px;background:linear-gradient(135deg,#25442e,#14281b);color:#f4fff0}
+.v9-achievements h2{margin:0 0 12px;font-size:22px}.v9-achievements p{margin:7px 0;line-height:1.7}
+@media(max-width:400px){.v8-date-sheet{padding:18px!important}.v9-quick-year-row{grid-template-columns:1fr}.v9-quick-submit{width:100%}.v8-date-progress span{padding:12px 4px!important;font-size:13px!important}.v8-day-grid{gap:3px!important}.v8-day-option{min-height:39px!important;font-size:14px!important}.v8-year-grid .v8-date-option{min-height:55px!important}.v8-date-overlay{padding:6px!important}.v8-date-sheet{max-height:calc(100dvh - 12px)!important}}

@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090d0b">
+  <meta name="description" content="VEXYRO SPORT — הצעד הראשון שלך. תצוגה ראשונית של חוויית האימון האישית.">
+  <title>VEXYRO SPORT — מתחילים להתקדם</title>
+  <script src="release-boot.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="workout.css">
+  <link rel="stylesheet" href="training-options.css">
+  <link rel="stylesheet" href="history.css">
+  <link rel="stylesheet" href="account.css">
+  <link rel="stylesheet" href="video-library.css">
+  <link rel="stylesheet" href="membership.css">
+  <link rel="stylesheet" href="birthdate-picker.css">
+  <link rel="stylesheet" href="v9.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script src="data/exercises-home.js" defer></script>
+  <script src="data/exercises-gym.js" defer></script>
+  <script src="data/exercises.js" defer></script>
+  <script src="plan-legacy.js" defer></script>
+  <script src="plan-v2.js" defer></script>
+  <script src="training-options.js" defer></script>
+  <script src="plan-v3.js" defer></script>
+  <script src="plan-v4.js" defer></script>
+  <script src="plan-v5.js" defer></script>
+  <script src="schedule.js" defer></script>
+  <script src="plan.js" defer></script>
+  <script src="workout-engine.js" defer></script>
+  <script src="guidance.js" defer></script>
+  <script src="history.js" defer></script>
+  <script src="account.js" defer></script>
+  <script src="video-library.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="v4-enhancements.js" defer></script>
+  <script src="v6-extras.js" defer></script>
+  <script src="birthdate-utils.js" defer></script>
+  <script src="birthdate-picker.js" defer></script>
+  <script src="v9-extras.js" defer></script>
+<style>body,body *:not(input):not(textarea):not(select):not([contenteditable="true"]){-webkit-user-select:none;user-select:none}input,textarea,select,[contenteditable="true"]{user-select:text;-webkit-user-select:text}.vex-profile-summary{padding:16px;margin:14px 0;background:#15231d;border-radius:14px;line-height:2}.vex-profile-summary strong{color:#a4f7bb}.vex-profile-summary p{margin:3px 0}.vex-profile-summary button{margin-top:12px}</style></head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="v-blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#48b8ff"/><stop offset=".5" stop-color="#168bfa"/><stop offset="1" stop-color="#0870e5"/></linearGradient>
+      <symbol id="logo-v" viewBox="0 0 100 72">
+        <path d="M17 7h17l17 34L69 7h17L51 69Z" fill="url(#v-blue)"/>
+        <path d="m34 7 17 34 6-12-9-22Z" fill="#062e64" opacity=".6"/>
+        <path d="m51 69 0-28L69 7h17Z" fill="#0e82f4"/>
+        <rect x="2" y="26" width="5" height="20" rx="1.3" fill="#238ff8"/><rect x="9" y="21" width="5" height="30" rx="1.3" fill="#238ff8"/><rect x="16" y="17" width="5" height="38" rx="1.3" fill="#239afa"/>
+        <rect x="79" y="17" width="5" height="38" rx="1.3" fill="#239afa"/><rect x="86" y="21" width="5" height="30" rx="1.3" fill="#238ff8"/><rect x="93" y="26" width="5" height="20" rx="1.3" fill="#238ff8"/>
+      </symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5m7-7-7 7 7 7"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+      <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5h4"/></symbol>
+      <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M7 9h10M7 15h10M4 8v8m16-8v8M2 10v4m20-4v4"/><rect x="4" y="6" width="3" height="12" rx="1"/><rect x="17" y="6" width="3" height="12" rx="1"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13.5 2-10 12H11L9.5 22l11-13H13Z"/></symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M13 2c1 4-3 5-2 9-2-1-3-2-3-4-1 2-4 5-4 9a8 8 0 0 0 16 0c0-4-3-8-7-14Z"/></symbol>
+      <symbol id="i-trend" viewBox="0 0 24 24"><path d="m3 18 6-6 4 4L21 6m-7 0h7v7"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2c1.7 6.3 3.7 8.3 10 10-6.3 1.7-8.3 3.7-10 10C10.3 15.7 8.3 13.7 2 12c6.3-1.7 8.3-3.7 10-10Z"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-8 9 8v10a1 1 0 0 1-1 1h-5v-8H9v8H4a1 1 0 0 1-1-1Z"/></symbol>
+      <symbol id="i-nutrition" viewBox="0 0 24 24"><path d="M12 21C6 18 4 13 5 9c1-4 4-5 7-3 3-2 6-1 7 3 1 4-1 9-7 12Z"/><path d="M12 6c0-3 1-4 3-5M12 6C9 3 7 3 6 3"/><path d="M12 11v6M9 14h6"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="17" rx="2"/><path d="M7 2v6m10-6v6M3 11h18"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M3 22v-2c0-4 4-6 9-6s9 2 9 6v2"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 9h18c0-1-3-2-3-9M10 21h4M12 2V1"/></symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24"><path d="m9 3 1-2h4l1 2 2 1 2-.2 2 3-1 2v3l1 2-2 3-2-.2-2 1-1 3h-4l-1-3-2-1-2 .2-2-3 1-2V9L3 7l2-3 2 .2Z" transform="translate(0 1) scale(1 .95)"/><circle cx="12" cy="11.5" r="3.2"/></symbol>
+      <symbol id="i-ruler" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="20" rx="2"/><path d="M8 6h4m-4 4h3m-3 4h4m-4 4h3"/></symbol>
+      <symbol id="i-weight" viewBox="0 0 24 24"><path d="M5 7h14l3 14H2Z"/><circle cx="12" cy="5" r="3"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    </defs>
+  </svg>
+
+  <main class="app-shell">
+    <section class="view welcome-view" id="view-welcome" aria-labelledby="welcome-heading">
+      <div class="welcome-photo" aria-hidden="true"></div>
+      <div class="welcome-top"><span class="preview-badge"><span></span>תצוגה מקדימה</span></div>
+      <div class="welcome-identity">
+        <div class="hero-mark"><svg aria-hidden="true"><use href="#logo-v"/></svg></div>
+        <p class="welcome-wordmark" dir="ltr">VEXYRO <span>SPORT</span></p>
+        <span class="brand-line" aria-hidden="true"></span>
+      </div>
+      <div class="welcome-bottom">
+        <p class="eyebrow">הצעד הראשון שלך</p>
+        <h1 id="welcome-heading" tabindex="-1">מתחילים<br><span>להתקדם.</span></h1>
+        <p class="welcome-description">המקום שלך להתחיל.<br>בקצב שלך, בדרך שלך.</p>
+        <button type="button" class="button button-primary button-wide" data-go="details"><span>התחל</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+        <div class="welcome-footer"><span></span><span>כל צעד הוא התחלה של משהו</span><span></span></div>
+      </div>
+    </section>
+
+    <section class="view onboarding-view details-view" id="view-details" aria-labelledby="details-heading" hidden>
+      <header class="onboarding-header">
+        <button type="button" class="back-button" id="details-back" data-form-back><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>חזרה</span></button>
+        <div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div>
+      </header>
+      <div class="details-heading-block">
+        <p class="eyebrow" id="details-step-label">שלב 1 מתוך 3</p>
+        <h1 id="details-heading" tabindex="-1">נעים להכיר</h1>
+        <p class="section-description" id="details-description">נתחיל בכמה פרטים עליך.</p>
+      </div>
+      <ol class="profile-steps" aria-label="שלבי השאלון">
+        <li data-step-marker="0" aria-current="step"><span class="step-line" aria-hidden="true"></span><span>פרטים אישיים</span></li>
+        <li data-step-marker="1"><span class="step-line" aria-hidden="true"></span><span>שגרת אימון</span></li>
+        <li data-step-marker="2"><span class="step-line" aria-hidden="true"></span><span>מטרות וניסיון</span></li>
+      </ol>
+      <form id="profile-form" class="profile-form" novalidate>
+        <div class="profile-step" data-profile-step="0">
+          <div class="form-field">
+            <label for="name">איך קוראים לך?</label>
+            <div class="field-control name-control"><svg class="icon field-icon" aria-hidden="true"><use href="#i-user"/></svg><input id="name" name="name" type="text" required maxlength="40" autocomplete="given-name" placeholder="למשל, לוטן" aria-describedby="name-hint name-error"></div>
+            <p class="field-hint" id="name-hint">כך נברך אותך במסך הבית.</p>
+            <p class="field-error" aria-live="polite" id="name-error" hidden></p>
+          </div>
+          <div class="measurements-grid">
+            <div class="form-field">
+              <label for="age">תאריך לידה</label>
+              <div class="field-control"><input id="age" name="birthDate" type="date" required dir="ltr" aria-describedby="age-error"></div>
+              <p class="field-error" aria-live="polite" id="age-error" hidden></p>
+            </div>
+            <div class="form-field">
+              <label for="height">גובה</label>
+              <div class="field-control"><input id="height" name="height" type="number" inputmode="decimal" required min="30" max="300" step="any" placeholder="170" dir="ltr" aria-describedby="height-error"><span class="field-unit">ס״מ</span></div>
+              <p class="field-error" aria-live="polite" id="height-error" hidden></p>
+            </div>
+            <div class="form-field">
+              <label for="weight">משקל</label>
+              <div class="field-control"><input id="weight" name="weight" type="number" inputmode="decimal" required min="1" max="700" step="any" placeholder="65" dir="ltr" aria-describedby="weight-error"><span class="field-unit">ק״ג</span></div>
+              <p class="field-error" aria-live="polite" id="weight-error" hidden></p>
+            </div>
+          </div>
+          <fieldset class="choice-group" id="gender-group" aria-describedby="gender-error">
+            <legend>מין</legend>
+            <div class="choices-grid gender-grid">
+              <label class="choice"><input class="choice-input" type="radio" name="gender" value="male" required><span class="choice-content"><span>זכר</span><span class="choice-indicator" aria-hidden="true"></span></span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="gender" value="female" required><span class="choice-content"><span>נקבה</span><span class="choice-indicator" aria-hidden="true"></span></span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="gender" value="other" required><span class="choice-content"><span>אחר</span><span class="choice-indicator" aria-hidden="true"></span></span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="gender" value="prefer-not-to-say" required><span class="choice-content"><span>לא לציין</span><span class="choice-indicator" aria-hidden="true"></span></span></label>
+            </div>
+            <p class="field-error" aria-live="polite" id="gender-error" hidden></p>
+          </fieldset>
+        </div>
+        <div class="profile-step" data-profile-step="1" hidden>
+          <fieldset class="choice-group" id="trainingLocation-group" aria-describedby="trainingLocation-error">
+            <legend>איפה מתאים לך להתאמן?</legend>
+            <div class="choices-grid location-grid">
+              <label class="choice"><input class="choice-input" type="radio" name="trainingLocation" value="home" required><span class="choice-content location-choice"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>בבית</span></span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="trainingLocation" value="gym" required><span class="choice-content location-choice"><svg class="icon" aria-hidden="true"><use href="#i-dumbbell"/></svg><span>בחדר כושר</span></span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="trainingLocation" value="both" required><span class="choice-content location-choice"><span class="location-both" aria-hidden="true"><svg class="icon"><use href="#i-home"/></svg><svg class="icon"><use href="#i-dumbbell"/></svg></span><span>בשניהם</span></span></label>
+            </div>
+            <p class="field-error" aria-live="polite" id="trainingLocation-error" hidden></p>
+          </fieldset>
+          <fieldset class="choice-group frequency-group" id="workoutsPerWeek-group" aria-describedby="frequency-hint workoutsPerWeek-error">
+            <legend>כמה אימונים בשבוע?</legend>
+            <p class="choice-hint" id="frequency-hint">בחרו את מספר האימונים הרצוי בשבוע.</p>
+            <div class="choices-grid frequency-grid">
+              <label class="choice"><input class="choice-input" type="radio" name="workoutsPerWeek" value="1" aria-label="אימון אחד בשבוע" required><span class="choice-content frequency-choice" aria-hidden="true">1</span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="workoutsPerWeek" value="2" aria-label="2 אימונים בשבוע" required><span class="choice-content frequency-choice" aria-hidden="true">2</span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="workoutsPerWeek" value="3" aria-label="3 אימונים בשבוע" required><span class="choice-content frequency-choice" aria-hidden="true">3</span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="workoutsPerWeek" value="4" aria-label="4 אימונים בשבוע" required><span class="choice-content frequency-choice" aria-hidden="true">4</span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="workoutsPerWeek" value="5" aria-label="5 אימונים בשבוע" required><span class="choice-content frequency-choice" aria-hidden="true">5</span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="workoutsPerWeek" value="6" aria-label="6 אימונים בשבוע" required><span class="choice-content frequency-choice" aria-hidden="true">6</span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="workoutsPerWeek" value="7" aria-label="7 אימונים בשבוע" required><span class="choice-content frequency-choice" aria-hidden="true">7</span></label>
+            </div>
+            <p class="field-error" aria-live="polite" id="workoutsPerWeek-error" hidden></p>
+          </fieldset>
+        </div>
+        <div class="profile-step" data-profile-step="2" hidden>
+          <fieldset class="choice-group" id="goals-group" aria-describedby="goals-hint goals-error">
+            <legend>מה המטרות שלך?</legend>
+            <p class="choice-hint" id="goals-hint">אפשר לבחור יותר ממטרה אחת.</p>
+            <div class="choices-grid goals-grid">
+              <label class="choice"><input class="choice-input" type="checkbox" name="goals" value="strength"><span class="choice-content"><span>שיפור כוח</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="goals" value="endurance"><span class="choice-content"><span>כושר וסיבולת</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="goals" value="flexibility"><span class="choice-content"><span>גמישות</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="goals" value="sport-performance"><span class="choice-content"><span>ביצועים בספורט</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="goals" value="general-fitness"><span class="choice-content"><span>כושר כללי</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            </div>
+            <p class="field-error" aria-live="polite" id="goals-error" hidden></p>
+          </fieldset>
+          <fieldset class="choice-group" id="experience-group" aria-describedby="experience-error">
+            <legend>מה רמת הניסיון שלך?</legend>
+            <div class="choices-grid experience-grid">
+              <label class="choice"><input class="choice-input" type="radio" name="experience" value="beginner" required><span class="choice-content"><span>בתחילת הדרך</span><span class="choice-indicator" aria-hidden="true"></span></span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="experience" value="intermediate" required><span class="choice-content"><span>ניסיון מסוים</span><span class="choice-indicator" aria-hidden="true"></span></span></label>
+              <label class="choice"><input class="choice-input" type="radio" name="experience" value="experienced" required><span class="choice-content"><span>ניסיון רב</span><span class="choice-indicator" aria-hidden="true"></span></span></label>
+            </div>
+            <p class="field-error" aria-live="polite" id="experience-error" hidden></p>
+          </fieldset>
+        </div>
+        <p id="profile-error" class="form-error" aria-live="polite" hidden></p>
+        <div class="profile-actions"><button type="button" class="button button-secondary" id="profile-back" data-form-back hidden>הקודם</button><button type="submit" class="button button-primary" id="profile-next"><span id="profile-next-label">המשך</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></div>
+        <p class="privacy-note" data-storage-copy>הפרטים נשמרים במכשיר הזה. אפשר להפעיל שמירה בחשבון במסך החשבון.</p>
+      </form>
+    </section>
+
+    <section class="view onboarding-view membership-view" id="view-membership" aria-labelledby="membership-heading" hidden>
+      <header class="onboarding-header">
+        <button type="button" class="back-button" data-membership-back><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>חזרה</span></button>
+        <div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div>
+      </header>
+      <div class="membership-intro">
+        <span class="membership-step">השלב הבא שלך</span>
+        <h1 id="membership-heading" tabindex="-1">הדרך שלך.<br><span>המסלול שלך.</span></h1>
+        <p id="membership-intro-copy">כל מה שצריך כדי להתחיל, בקצב שלך.</p>
+      </div>
+      <div class="membership-benefits"><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>התוכנית שלך</span><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>מעקב התקדמות</span><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>סרטוני תרגילים</span></div>
+      <form id="membership-form">
+        <fieldset class="membership-options">
+          <legend>איך נתחיל?</legend>
+          <label class="membership-option">
+            <input type="radio" name="membershipPlan" value="trial" checked required>
+            <span class="membership-card">
+              <span class="membership-radio" aria-hidden="true"></span>
+              <span class="membership-card-copy"><strong>שבוע חינם</strong><span>7 ימים להכיר את האפליקציה</span></span>
+              <span class="membership-price"><bdi>0 <small>₪</small></bdi><span>לשבוע ניסיון</span></span>
+            </span>
+          </label>
+          <label class="membership-option">
+            <input type="radio" name="membershipPlan" value="monthly" required>
+            <span class="membership-card">
+              <span class="membership-radio" aria-hidden="true"></span>
+              <span class="membership-card-copy"><strong>מסלול חודשי</strong><span>מתקדמים חודש אחרי חודש</span></span>
+              <span class="membership-price"><bdi>5 <small>₪</small></bdi><span>לחודש</span></span>
+            </span>
+          </label>
+          <label class="membership-option membership-yearly">
+            <input type="radio" name="membershipPlan" value="yearly" required>
+            <span class="membership-card">
+              <span class="membership-radio" aria-hidden="true"></span>
+              <span class="membership-card-copy"><span class="membership-value">חיסכון של 10 ₪ בשנה</span><strong>מסלול שנתי</strong><span>שנה שלמה של התמדה</span></span>
+              <span class="membership-price"><bdi>50 <small>₪</small></bdi><span>לשנה</span></span>
+            </span>
+          </label>
+        </fieldset>
+        <p class="membership-selection" id="membership-selection" aria-live="polite">בחרת שבוע ניסיון ללא תשלום.</p>
+        <button type="submit" class="button button-primary button-wide" id="membership-submit"><span id="membership-submit-label">המשך עם שבוע חינם</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+        <p class="membership-billing-note">בחירת מסלול להדגמה. אין חיוב, מסירת פרטי אשראי או חידוש אוטומטי בגרסה הזו.</p>
+        <p class="form-error" id="membership-error" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <section class="view training-view account-view" id="view-account" aria-labelledby="account-heading" hidden>
+      <header class="onboarding-header training-header"><button type="button" class="back-button" data-go="home"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>לאפליקציה</span></button><div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div></header>
+      <div class="training-heading"><p class="eyebrow">הכול ממשיך איתך</p><h1 id="account-heading" tabindex="-1">ההגדרות שלי</h1><p class="training-description">התוכנית וההתקדמות נשמרות בדפדפן במכשיר הזה.</p></div>
+      <div id="account-content"></div>
+      <div id="profile-summary" class="vex-profile-summary" aria-label="הפרטים האישיים שלי"></div>
+      <button type="button" class="button button-primary button-wide" data-edit-account-settings>עריכת הפרטים וההעדפות</button>
+      <form class="account-settings-form" id="account-settings-form" hidden novalidate>
+        <h2>שינוי הפרטים שלך</h2>
+        <p>הפרטים ניתנים לשינוי בכל עת. לאחר שינוי מטרות או תדירות אימון ייתכן שיהיה צורך לבנות תוכנית חדשה.</p>
+        <div class="account-form-grid">
+          <label>שם<input name="name" type="text" maxlength="40" required></label>
+          <label>תאריך לידה<input name="birthDate" type="date" required dir="ltr"></label>
+          <label>גובה בס״מ<input name="height" type="number" min="30" max="300" step="any" required></label>
+          <label>משקל בק״ג<input name="weight" type="number" min="1" max="700" step="any" required></label>
+          <label>מין<select name="gender"><option value="male">זכר</option><option value="female">נקבה</option><option value="other">אחר</option><option value="prefer-not-to-say">מעדיפ/ה לא לציין</option></select></label>
+          <label>אימונים בשבוע<select name="workoutsPerWeek"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option></select></label>
+          <label>מיקום אימון<select name="trainingLocation"><option value="home">בית</option><option value="gym">חדר כושר</option><option value="both">שניהם</option></select></label>
+          <label>ניסיון<select name="experience"><option value="beginner">מתחיל/ה</option><option value="intermediate">בינוני/ת</option><option value="experienced">מנוסה</option></select></label>
+        </div>
+        <fieldset class="account-goals"><legend>מטרות אימון</legend>
+          <label><input type="checkbox" name="goals" value="strength"> שיפור כוח</label>
+          <label><input type="checkbox" name="goals" value="endurance"> כושר וסיבולת</label>
+          <label><input type="checkbox" name="goals" value="flexibility"> גמישות</label>
+          <label><input type="checkbox" name="goals" value="sport-performance"> ביצועים בספורט</label>
+          <label><input type="checkbox" name="goals" value="general-fitness"> כושר כללי</label>
+        </fieldset>
+        <p id="account-settings-error" class="form-error" role="alert" hidden></p>
+        <div class="account-form-actions"><button type="submit" class="button button-primary">שמירת שינויים</button><button type="button" class="button button-secondary" data-cancel-account-settings>ביטול</button></div>
+      </form>
+      <button type="button" class="button button-secondary button-wide" data-edit-plan>שינוי תוכנית האימונים</button>
+      <section class="account-preferences" id="account-preferences" aria-label="ההעדפות שלי">
+        <button type="button" class="account-preference-row" data-edit-account-settings><span><strong>הפרטים וההעדפות שלי</strong><small>שם, שאלון ומטרות האימון</small></span><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+        <button type="button" class="account-preference-row" data-open-membership><span><strong>המסלול שבחרתי</strong><small id="account-membership-label">עוד לא נבחר מסלול</small></span><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+        <button type="button" class="account-preference-row" data-open-videos><span><strong>הסרטונים המקוריים שלי</strong><small>העלאה ושיוך לכל תרגיל</small></span><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+      </section>
+      <section class="v6-reset-panel" aria-labelledby="v6-reset-title">
+        <div class="v6-reset-header"><span aria-hidden="true">↻</span><h2 id="v6-reset-title">רוצים להתחיל מהתחלה?</h2></div>
+        <p>אפשר למלא מחדש את השאלון ולבנות תוכנית חדשה. התוכן השמור בדפדפן יימחק רק לאחר אישור מפורש.</p>
+        <button type="button" id="v6-start-over" class="button button-secondary button-wide">מחיקת נתונים מקומיים והתחלה מחדש</button>
+      </section>
+    </section>
+
+    <section class="view training-view account-view" id="view-videos" aria-labelledby="videos-heading" hidden>
+      <header class="onboarding-header training-header"><button type="button" class="back-button" data-videos-back><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>חזרה</span></button><div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div></header>
+      <div class="training-heading"><p class="eyebrow">ההדגמה שלכם, בתוך האימון</p><h1 id="videos-heading" tabindex="-1">הסרטונים המקוריים שלי</h1><p class="training-description">בחרו תרגיל והעלו את הסרטון שצילמתם. הוא יופיע בהדגמה של אותו תרגיל בספרייה ובאימון.</p></div>
+      <div id="videos-content"></div>
+    </section>
+
+    <section class="view home-view" id="view-home" aria-labelledby="home-greeting" hidden>
+      <header class="home-header">
+        <button type="button" class="avatar" id="avatar-initial" data-go="account" aria-label="פרופיל והגדרות">א</button>
+        <div class="home-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div>
+        <div class="header-actions"><button type="button" class="icon-button" data-soon aria-label="התראות"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg></button><button type="button" class="icon-button" data-open-account aria-label="החשבון וההגדרות שלי"><svg class="icon" aria-hidden="true"><use href="#i-gear"/></svg></button></div>
+      </header>
+      <h1 class="home-greeting" id="home-greeting" tabindex="-1">שלום</h1>
+      <button type="button" class="home-account-status" data-open-account><span class="account-status-dot" aria-hidden="true"></span><span id="home-account-status">שמירה במכשיר הזה</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+      <div class="home-content">
+        <button type="button" class="resume-workout" id="home-resume" data-resume-workout hidden><span class="resume-workout-icon" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></span><span class="resume-workout-copy"><strong>האימון שלך מחכה לך</strong><span>להמשיך מהנקודה שבה עצרת</span></span><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+        <div class="home-training-context-note" id="home-training-context-note" hidden><p id="home-training-context-copy"></p><button type="button" class="text-button" data-open-adaptations>עדכון ההתאמות שלי<svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></div>
+        <article class="workout-card">
+          <div class="workout-copy"><p class="workout-eyebrow" id="home-workout-eyebrow">מתחילים כאן</p><h2 id="home-workout-title">התוכנית הראשונה שלך</h2><div class="workout-meta"><span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><bdi id="home-workout-minutes">0</bdi> דקות</span><span class="meta-dot" aria-hidden="true">·</span><span><svg class="icon" aria-hidden="true"><use href="#i-dumbbell"/></svg><bdi id="home-workout-count">0</bdi> תרגילים</span></div></div>
+          <button type="button" class="button button-primary workout-button" data-open-training><span id="home-workout-label">בניית התוכנית שלי</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+        </article>
+        <button type="button" class="home-plan-link" id="home-plan-link" data-open-plan hidden><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span>לכל השבוע שלי</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+
+        <div class="home-training-links"><button type="button" class="home-catalog-link" data-new-plan id="home-new-plan" hidden>תרגילים והגדרות לשבוע חדש</button><button type="button" class="home-catalog-link" data-open-library>ספריית התרגילים והסרטונים</button><button type="button" class="home-catalog-link" data-open-videos>הסרטונים המקוריים שלי</button></div>
+
+        <article class="v6-daily-tip glass-card" aria-labelledby="v6-tip-title">
+          <div class="v6-tip-top"><span class="v6-tip-emoji" aria-hidden="true">✦</span><span>הטיפ היומי שלך</span><small id="v6-tip-number">טיפ יומי</small></div>
+          <h2 id="v6-tip-title">מתחילים בהדרגה</h2>
+          <p id="v6-tip-body">לפני אימון, התחילו בכמה דקות של תנועה קלה.</p>
+        </article>
+        <div class="metrics-grid" aria-label="הנתונים שלך">
+          <article class="metric-card"><svg class="icon metric-icon" aria-hidden="true"><use href="#i-bolt"/></svg><h2>אנרגיה</h2><p class="metric-value energy-value"><bdi dir="ltr">0<span>/100</span></bdi></p><p class="metric-caption">באפליקציה</p></article>
+          <article class="metric-card"><svg class="icon metric-icon" aria-hidden="true"><use href="#i-flame"/></svg><h2>רצף בתוכנית</h2><p class="metric-value">0</p><p class="metric-caption">ימים</p></article>
+          <article class="metric-card"><svg class="icon metric-icon" aria-hidden="true"><use href="#i-trend"/></svg><h2>דרגה</h2><p class="metric-value">0</p><div class="rank-track" role="progressbar" aria-label="התקדמות לדרגה הבאה" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><span></span></div><p class="metric-caption rank-caption">0 מתוך 10</p></article>
+        </div>
+
+        <article class="weekly-card glass-card"><h2>ההתקדמות שלך השבוע</h2><p id="weekly-progress-text"><strong>0</strong> אימונים השבוע</p><div class="weekly-track" aria-hidden="true"><span></span><span></span><span></span></div><div class="home-total-line"><span>סך האימונים שהושלמו</span><strong id="home-completed-total" aria-label="מספר האימונים שהושלמו">0</strong></div><div class="home-last-workout" id="home-last-workout" hidden></div><button type="button" class="text-button home-history-link" data-open-history>להיסטוריה ולהתקדמות שלי<svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></article>
+
+        <button type="button" class="coach-card glass-card" data-soon data-message="המאמן החכם יתווסף בהמשך."><span class="coach-symbol"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></span><span class="coach-copy"><strong>המאמן החכם</strong><span>0 שאלות זמינות השבוע</span></span><svg class="icon coach-chevron" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+      </div>
+      <div class="home-settings-tip glass-card" id="home-settings-tip" hidden><strong>אפשר לשנות הכול בהגדרות</strong><p>סיימת את השאלון? תמיד אפשר לעדכן תאריך לידה, גובה, משקל, מטרות, ימי אימון או את תוכנית האימונים.</p><button type="button" class="button button-secondary" data-go="account">פתיחת ההגדרות</button><button type="button" class="text-button" data-dismiss-settings-tip>הבנתי</button></div>
+      <p class="home-preview-note">תצוגה מקדימה <span aria-hidden="true">·</span> הדרך שלך עוד לפניך</p>
+      <nav class="bottom-nav" aria-label="ניווט ראשי"><button type="button" class="nav-item is-active" data-go="home" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>בית</span></button><button type="button" class="nav-item" data-nutrition-soon aria-label="תוכנית תזונה"><svg class="icon" aria-hidden="true"><use href="#i-nutrition"/></svg><span>תזונה</span></button><button type="button" class="nav-item" data-open-history aria-label="ההתקדמות שלי"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg><span>התקדמות</span></button><button type="button" class="nav-item" data-go="account" aria-label="פרופיל והגדרות"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><span>פרופיל</span></button></nav>
+    </section>
+
+    <section class="view training-view history-view" id="view-history" aria-labelledby="history-heading" hidden>
+      <header class="onboarding-header training-header">
+        <button type="button" class="back-button" data-go="home"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>לבית</span></button>
+        <div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div>
+      </header>
+      <div class="training-heading history-heading">
+        <p class="eyebrow">כל אימון הוא צעד קדימה</p>
+        <h1 id="history-heading" tabindex="-1">ההתקדמות שלי</h1>
+        <p class="training-description">מה עשית, מתי ובאיזה משקל. הביצועים שלך במקום אחד.</p>
+      </div>
+      <div id="history-content"></div>
+      <p class="history-storage-note" data-storage-copy>המידע נשמר במכשיר הזה. אפשר להפעיל שמירה בחשבון במסך החשבון.</p>
+      <nav class="bottom-nav" aria-label="ניווט ראשי"><button type="button" class="nav-item" data-go="home"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>בית</span></button><button type="button" class="nav-item" data-nutrition-soon aria-label="תוכנית תזונה"><svg class="icon" aria-hidden="true"><use href="#i-nutrition"/></svg><span>תזונה</span></button><button type="button" class="nav-item is-active" data-open-history aria-current="page" aria-label="ההתקדמות שלי"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg><span>התקדמות</span></button><button type="button" class="nav-item" data-go="account" aria-label="פרופיל והגדרות"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><span>פרופיל</span></button></nav>
+    </section>
+
+    <section class="view training-view" id="view-plan-setup" aria-labelledby="plan-setup-heading" hidden>
+      <header class="onboarding-header training-header">
+        <button type="button" class="back-button" data-go="home"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>לבית</span></button>
+        <div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div>
+      </header>
+      <div class="training-heading setup-heading">
+        <span class="training-heading-icon" aria-hidden="true"><svg class="icon"><use href="#i-calendar"/></svg></span>
+        <p class="eyebrow">הצעד הבא שלך</p>
+        <h1 id="plan-setup-heading" tabindex="-1">התוכנית שלך מתחילה כאן</h1>
+        <p class="training-description" id="plan-profile-summary">כמה בחירות קצרות, ונציג לך טיוטה לשבוע.</p>
+      </div>
+      <div class="training-note is-warning" id="plan-missing-profile" hidden><p>כדי להכין את הטיוטה, צריך להשלים את הפרטים האישיים.</p><button type="button" class="text-button" data-edit-profile>להשלמת הפרטים<svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></div>
+      <form class="plan-setup-form" id="plan-setup-form" novalidate>
+        <div class="setup-goal-guidance" id="setup-goal-guidance"></div>
+        <section class="exercise-selection-launch" aria-labelledby="selection-launch-heading">
+          <p class="eyebrow">שלב 1 · התרגילים שלך</p>
+          <h2 id="selection-launch-heading">מה נכנס לתוכנית?</h2>
+          <p id="setup-selected-summary">עדיין לא נבחרו תרגילים.</p>
+          <button type="button" class="button button-primary button-wide" data-open-picker id="setup-pick-exercises"><span>בחירת תרגילים</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+          <p class="selection-launch-hint">בחרו כמה תרגילים שתרצו מתוך הספרייה. נשלב את הבחירה שלכם במהלך השבוע, לצד פתיחה וסיום בתנועה קלה.</p>
+        </section>
+        <section class="setup-prescriptions" id="setup-prescriptions" hidden>
+          <h2>האימון שלך, לפרטים</h2>
+          <p class="prescriptions-intro">בחרו סטים, חזרות, משקל וזמן מנוחה לכל תרגיל מרכזי. בתרגיל לפי זמן נשאר משך התנועה המתוכנן במקום מספר חזרות. החימום והסיום נשארים כפי שמופיעים בתוכנית.</p>
+          <div class="setup-prescription-list" id="setup-prescription-list"></div>
+          <p class="form-error" id="setup-prescription-error" role="alert" hidden></p>
+        </section>
+        <section class="setup-weekly-areas" id="setup-weekly-areas" aria-labelledby="schedule-heading">
+          <p class="eyebrow">שלב 2 · ימי אימון ואזורי גוף</p>
+          <h2 id="schedule-heading">באילו ימים ועל מה עובדים?</h2>
+          <p>בחרו בדיוק את מספר הימים שהוגדר בפרופיל. בכל יום לחצו על אזורים במפת הגוף ובחרו את שעת האימון.</p>
+          <div id="schedule-day-tabs" class="schedule-day-tabs" role="group" aria-label="ימי האימון בשבוע"></div>
+          <div id="schedule-area-editor" class="schedule-area-editor" hidden>
+            <h3 id="schedule-day-title"></h3><button type="button" class="schedule-remove-day" data-remove-schedule-day>הסרת היום הזה מתוכנית האימונים</button>
+            <label class="schedule-time-label" for="schedule-day-time">שעת האימון ביום הזה <input type="time" id="schedule-day-time" value="18:00" dir="ltr"></label>
+            <div class="body-maps">
+              <div class="body-map-figure"><strong>מבט קדמי</strong>
+                <img class="body-map-photo" src="assets/anatomy-front.webp" alt="איור אנטומי של שרירי הגוף במבט קדמי" loading="lazy">
+                <button class="body-zone zone-shoulders" type="button" data-muscle-area="shoulders" aria-pressed="false">כתפיים</button>
+                <button class="body-zone zone-chest" type="button" data-muscle-area="chest" aria-pressed="false">חזה</button>
+                <button class="body-zone zone-arms" type="button" data-muscle-area="arms" aria-pressed="false">ידיים</button>
+                <button class="body-zone zone-core" type="button" data-muscle-area="core" aria-pressed="false">בטן</button>
+                <button class="body-zone zone-legs" type="button" data-muscle-area="legs" aria-pressed="false">רגליים</button>
+              </div>
+              <div class="body-map-figure"><strong>מבט אחורי</strong>
+                <img class="body-map-photo" src="assets/anatomy-back.webp" alt="איור אנטומי של שרירי הגוף במבט אחורי" loading="lazy">
+                <button class="body-zone zone-back" type="button" data-muscle-area="back" aria-pressed="false">גב</button>
+              </div>
+            </div>
+            <div class="schedule-other-areas"><button type="button" data-muscle-area="cardio" aria-pressed="false">סיבולת / אירובי</button><button type="button" data-muscle-area="mobility" aria-pressed="false">גמישות / תנועתיות</button></div>
+            <p class="anatomy-help">לחצו על קבוצת שרירים במפה כדי להוסיף או להסיר אותה. אזורים שנבחרו מסומנים בירוק.</p><p id="schedule-body-summary" role="status">בחרו אזורי גוף ליום הזה.</p>
+          </div>
+          <p class="field-hint">לכל קבוצת שרירים מותר עד שני אימונים בשבוע, ולבטן עד שלושה. חייבות לעבור לפחות 48 שעות בין אימונים לאותה קבוצה, גם בין סוף שבוע לתחילת השבוע הבא. אימון סיבולת או תנועתיות אינו נספר כאימון כוח לאותה קבוצה.</p>
+          <p class="field-hint">תזכורות: שעה, 30 דקות, 15 דקות ו־5 דקות לפני שעת האימון. התראות מקומיות מחייבות שהאתר יהיה פתוח והרשאה פעילה.</p>
+          <button type="button" class="button button-secondary" id="enable-reminders">אפשר התראות</button>
+          <p id="schedule-error" class="form-error" role="alert" hidden></p>
+        </section><p class="plan-duration-auto"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>משך האימון יחושב לפי התרגילים, הסטים והמנוחות שבחרת.</span></p>
+        <div class="form-field setup-group">
+          <label for="plan-start-date">תחילת השבוע שלך</label>
+          <div class="field-control date-control"><svg class="icon field-icon" aria-hidden="true"><use href="#i-calendar"/></svg><input id="plan-start-date" name="startDate" type="date" required dir="ltr"></div>
+        </div>
+        <fieldset class="choice-group setup-group" aria-describedby="plan-equipment-hint">
+          <legend>מה זמין לך?</legend>
+          <p class="choice-hint" id="plan-equipment-hint">סמנו רק את האביזרים שזמינים לכם. בכל תרגיל מצוין בדיוק מה דרוש לו.</p>
+          <div class="choices-grid equipment-grid expanded-equipment-grid">
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="chair"><span class="choice-content"><span>כיסא יציב</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="wall"><span class="choice-content"><span>קיר פנוי</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="mat"><span class="choice-content"><span>מזרן</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="dumbbells"><span class="choice-content"><span>משקולות יד</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="band"><span class="choice-content"><span>גומיית התנגדות</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="bench"><span class="choice-content"><span>ספסל אימון</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="barbell"><span class="choice-content"><span>מוט ומשקולות</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="cable"><span class="choice-content"><span>מכשיר כבלים</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="machine"><span class="choice-content"><span>מכשירי חדר כושר</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="step"><span class="choice-content"><span>מדרגה יציבה</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            <label class="choice"><input class="choice-input" type="checkbox" name="equipment" value="ball"><span class="choice-content"><span>כדור כושר</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="choice-group setup-group">
+          <legend>לפני שמתחילים</legend>
+          <div class="choices-grid screening-grid">
+            <label class="choice"><input class="choice-input" type="radio" name="screening" value="clear" required><span class="choice-content"><span>אין מגבלה ידועה שמצריכה התאמה</span><span class="choice-indicator" aria-hidden="true"></span></span></label>
+            <label class="choice"><input class="choice-input" type="radio" name="screening" value="guidance" required><span class="choice-content"><span>יש כאב, פציעה או הנחיה מקצועית</span><span class="choice-indicator" aria-hidden="true"></span></span></label>
+            <label class="choice"><input class="choice-input" type="radio" name="screening" value="unsure" required><span class="choice-content"><span>לא בטוח/ה</span><span class="choice-indicator" aria-hidden="true"></span></span></label>
+          </div>
+        </fieldset>
+        <section class="setup-injury-details" id="setup-injury-details" hidden>
+          <fieldset class="choice-group">
+            <legend>איזה אזור צריך התאמה?</legend>
+            <p class="choice-hint">אפשר לבחור כמה אזורים. הבחירה אינה חובה.</p>
+            <div class="choices-grid injury-areas-grid">
+              <label class="choice"><input class="choice-input" type="checkbox" name="injuryAreas" value="knee"><span class="choice-content"><span>ברך</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="injuryAreas" value="shoulder"><span class="choice-content"><span>כתף</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="injuryAreas" value="back"><span class="choice-content"><span>גב</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="injuryAreas" value="hip"><span class="choice-content"><span>ירך</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="injuryAreas" value="ankle"><span class="choice-content"><span>קרסול</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="injuryAreas" value="wrist"><span class="choice-content"><span>שורש כף היד</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="injuryAreas" value="elbow"><span class="choice-content"><span>מרפק</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+              <label class="choice"><input class="choice-input" type="checkbox" name="injuryAreas" value="other"><span class="choice-content"><span>אחר</span><span class="choice-indicator" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+            </div>
+          </fieldset>
+          <p class="injury-scope-note">בחירת האזור עוזרת להציג דגשים; היא לא קובעת אילו תרגילים מתאימים לפציעה.</p>
+          <div class="setup-injury-guidance" id="setup-injury-guidance"></div>
+          <p class="workout-storage-note" id="training-context-storage-note" role="status" hidden></p>
+        </section>
+        <div class="training-note is-warning youth-note" id="plan-youth-note" hidden><label class="supervision-choice"><input id="youth-supervision" name="youthSupervision" type="checkbox"><span>התוכנית תיבדק עם מדריך מוסמך לאימוני בני נוער לפני התחלה.</span></label></div>
+        <p class="form-error" id="plan-error" role="alert" hidden></p>
+        <div class="training-note is-warning guidance-card" id="plan-guidance" hidden><p>לפי התשובה שלך, נדרשת התאמה עם איש מקצוע. אפשר לעיין בהסברים ובהדגמות.</p><button type="button" class="button button-secondary button-wide" data-open-library>לספריית התרגילים<svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></div>
+        <button type="submit" class="button button-primary button-wide" id="plan-generate-button"><span>הצגת הטיוטה</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+        <p class="training-scope">תוכנית היכרות מתבניות קבועות; אינה תוכנית שיקום או תוכנית ספורט ייעודית.</p>
+      </form>
+      <div class="training-footer"><button type="button" class="text-button" data-open-library><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span>לספריית התרגילים</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></div>
+    </section>
+
+    <section class="view training-view" id="view-plan" aria-labelledby="plan-heading" hidden>
+      <header class="onboarding-header training-header">
+        <button type="button" class="back-button" data-go="home"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>לבית</span></button>
+        <div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div>
+      </header>
+      <div class="training-heading">
+        <span class="plan-state-badge" id="plan-state-badge">טיוטה</span>
+        <h1 id="plan-heading" tabindex="-1">השבוע שלך, צעד אחר צעד</h1>
+        <p class="training-description" id="plan-subtitle">זמן לתנועה, זמן להתאוששות.</p>
+      </div>
+      <div class="plan-chips" id="plan-summary"></div>
+      <div class="training-note" id="plan-notice"></div>
+      <div class="plan-days" id="plan-days"></div>
+      <div class="plan-actions" id="plan-actions"><button type="button" class="button button-primary" id="plan-save-button" data-save-plan>שמירת התוכנית</button><button type="button" class="button button-secondary" id="plan-edit-button" data-edit-plan>שינוי הטיוטה</button><button type="button" class="button button-secondary button-wide" id="plan-home-button" data-go="home" hidden>חזרה לבית</button></div>
+      <p class="plan-counts-note">שמירת התוכנית אינה משנה את האנרגיה, הרצף או הדרגה שלך.</p>
+      <p class="plan-storage-note">רוצה לשנות משהו בטיוטה? תמיד אפשר להיכנס להגדרות ולערוך את הפרטים ואת תוכנית האימון.</p><button type="button" class="button button-secondary" data-go="account">להגדרות</button><p class="plan-storage-note" id="plan-storage-note">השמירה מתבצעת בדפדפן הזה.</p>
+      <div class="training-footer"><button type="button" class="text-button" data-open-library><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span>לספריית התרגילים</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></div>
+    </section>
+
+    <section class="view training-view" id="view-workout" aria-labelledby="workout-heading" hidden>
+      <header class="onboarding-header training-header">
+        <button type="button" class="back-button" id="workout-back-button" data-open-plan><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>לתוכנית</span></button>
+        <div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div>
+      </header>
+      <div class="training-heading"><p class="eyebrow">מכירים את התנועה</p><h1 id="workout-heading" tabindex="-1">האימון שלך</h1><p class="training-description" id="workout-description">תרגיל אחר תרגיל, בקצב נוח.</p></div>
+      <div class="plan-chips" id="workout-summary"></div>
+      <div class="training-note workout-intro-note">לעצור אם מופיעים כאב או הרגשה לא טובה. בכל תרגיל יש הסבר, דגשים וסרטון מצולם של ביצוע התנועה. אין צורך להתאים את המשקל או הקצב לאדם שבסרטון.</div>
+      <div class="workout-launch-panel"><p id="workout-launch-note">אפשר להכיר את התרגילים כאן, ואז להתחיל ולסמן כל סט במהלך האימון.</p><button type="button" class="button button-primary button-wide" id="workout-start-button" data-start-workout><span>מתחילים את האימון</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></div>
+      <div class="workout-blocks" id="workout-blocks"></div>
+      <p class="workout-scope-note">מסמנים כל סט ומאשרים את שמירת האימון במסך הסיכום.</p>
+      <div class="training-footer"><button type="button" class="text-button" data-open-library><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span>לספריית התרגילים</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg></button></div>
+    </section>
+
+    <section class="view training-view" id="view-library" aria-labelledby="library-heading" hidden>
+      <header class="onboarding-header training-header">
+        <button type="button" class="back-button" id="library-back-button" data-library-back><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>חזרה</span></button>
+        <div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div>
+      </header>
+      <div class="training-heading"><p class="eyebrow">ספריית התרגילים</p><h1 id="library-heading" tabindex="-1">לומדים את התנועה</h1><p class="training-description" id="library-description">תרגילים לבית ולחדר כושר, עם הסברים וסרטוני ביצוע מצולמים.</p></div>
+      <div class="training-note library-intro-note"><p>פתחו תרגיל כדי לקרוא איך מבצעים אותו, מתי לעצור או לבקש התאמה, ולצפות באדם שמדגים אותו.</p><p>הסרטונים מוצגים מהמקור בלחיצה. ההסברים כאן בעברית.</p></div>
+      <div class="catalog-toolbar">
+        <div class="catalog-search"><label for="library-search">חיפוש תרגיל</label><input id="library-search" type="search" placeholder="למשל: סקוואט, גב, משקולות" autocomplete="off"></div>
+        <div class="filter-bar">
+          <div class="filter-field"><label for="library-group">אזור בגוף</label><select id="library-group"><option value="all">כל האזורים</option><option value="legs">רגליים וישבן</option><option value="chest">חזה</option><option value="back">גב</option><option value="shoulders">כתפיים</option><option value="arms">ידיים</option><option value="core">בטן וליבה</option><option value="mobility">גמישות ותנועתיות</option><option value="cardio">תנועה וסיבולת</option></select></div>
+          <div class="filter-field"><label for="library-equipment">ציוד</label><select id="library-equipment"><option value="all">כל סוגי הציוד</option><option value="none">ללא ציוד</option><option value="chair">כיסא יציב</option><option value="wall">קיר פנוי</option><option value="mat">מזרן</option><option value="dumbbells">משקולות יד</option><option value="band">גומיית התנגדות</option><option value="bench">ספסל אימון</option><option value="barbell">מוט ומשקולות</option><option value="cable">מכשיר כבלים</option><option value="machine">מכשירי חדר כושר</option><option value="step">מדרגה יציבה</option><option value="ball">כדור כושר</option></select></div>
+        </div>
+      </div>
+      <p class="catalog-result-count" id="library-result-count" role="status"></p>
+      <p class="catalog-empty" id="library-empty" hidden>לא נמצאו תרגילים בסינון הזה. אפשר לשנות את החיפוש או את הסינון.</p>
+      <div class="exercise-library" id="exercise-library"></div>
+    </section>
+
+    <section class="view training-view picker-view" id="view-picker" aria-labelledby="picker-heading" hidden>
+      <header class="onboarding-header training-header"><button type="button" class="back-button" data-picker-back><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>לתוכנית</span></button><div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div></header>
+      <div class="training-heading"><p class="eyebrow">שלב 1 · בוחרים מה מתאים</p><h1 id="picker-heading" tabindex="-1">התרגילים שלך.<br>הבחירה שלך.</h1><p class="training-description" id="picker-description">ספרייה רחבה לבית ולחדר כושר. אפשר לבחור כל מספר תרגילים. פתחו תרגיל להסבר ולהדגמה מקומית, אם זמינה.</p></div>
+      <div class="picker-goal-summary" id="picker-goal-summary"></div>
+      <div class="injury-match-note" id="picker-health-note" hidden></div>
+      <div class="catalog-toolbar">
+        <div class="catalog-search"><label for="picker-search">חיפוש תרגיל</label><input id="picker-search" type="search" placeholder="למשל: סקוואט, גב, משקולות" autocomplete="off"></div>
+        <div class="filter-bar">
+          <div class="filter-field"><label for="picker-group">אזור בגוף</label><select id="picker-group"><option value="all">כל האזורים</option><option value="legs">רגליים וישבן</option><option value="chest">חזה</option><option value="back">גב</option><option value="shoulders">כתפיים</option><option value="arms">ידיים</option><option value="core">בטן וליבה</option><option value="mobility">גמישות ותנועתיות</option><option value="cardio">תנועה וסיבולת</option></select></div>
+          <div class="filter-field"><label for="picker-equipment">ציוד</label><select id="picker-equipment"><option value="all">כל סוגי הציוד</option><option value="none">ללא ציוד</option><option value="chair">כיסא יציב</option><option value="wall">קיר פנוי</option><option value="mat">מזרן</option><option value="dumbbells">משקולות יד</option><option value="band">גומיית התנגדות</option><option value="bench">ספסל אימון</option><option value="barbell">מוט ומשקולות</option><option value="cable">מכשיר כבלים</option><option value="machine">מכשירי חדר כושר</option><option value="step">מדרגה יציבה</option><option value="ball">כדור כושר</option></select></div>
+        </div>
+      </div>
+      <p class="catalog-result-count" id="picker-result-count" role="status"></p>
+      <div class="picker-filter-options"><label class="selected-only-filter"><input type="checkbox" id="picker-selected-only"><span>רק התרגילים שבחרתי</span></label><label class="selected-only-filter"><input type="checkbox" id="picker-goal-only"><span>מיקוד לפי המטרות שלי</span></label></div>
+      <div class="catalog-empty" id="picker-empty" hidden><p>אין תרגילים מתאימים לסינון הזה.</p><button type="button" class="text-button" data-reset-picker-filters>ניקוי הסינון</button></div>
+      <p class="form-error" id="picker-error" role="alert" hidden></p>
+      <div id="picker-results" class="picker-results"></div>
+      <div class="picker-actions"><div><strong id="picker-selection-count">0 נבחרו</strong><span>כל מספר תרגילים מתוך הספרייה</span></div><button type="button" class="button button-primary" id="picker-done" data-picker-done disabled>סיום הבחירה</button></div>
+    </section>
+
+    <section class="view active-view" id="view-active" aria-labelledby="active-heading" hidden>
+      <header class="active-header">
+        <button type="button" class="back-button active-exit-button" data-active-exit><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span>שמירה ויציאה</span></button>
+        <button type="button" class="active-pause-button" id="active-pause-button" data-active-pause aria-pressed="false">השהיה</button>
+      </header>
+      <div class="active-session-meta"><span class="active-phase" id="active-phase">האימון שלך</span><span class="active-elapsed-label"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>זמן אימון</span><span id="active-elapsed" dir="ltr">00:00</span></span></div>
+      <p class="active-position" id="active-position">תרגיל 0 מתוך 0</p>
+      <div class="active-progress" id="active-progress" role="progressbar" aria-label="התקדמות האימון" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="active-progress-fill"></span></div>
+      <div class="active-heading-block"><h1 id="active-heading" tabindex="-1">האימון שלך</h1><p id="active-description">תרגיל אחר תרגיל, בקצב שלך.</p></div>
+      <div class="active-goal-note" id="active-goal-note"></div>
+      <div class="active-dose-card"><span class="active-set-label" id="active-set-label">סט 0 מתוך 0</span><strong class="active-dose" id="active-dose">מוכנים להתחיל</strong></div>
+      <section class="active-load-panel active-reps-panel" id="active-reps-panel" hidden>
+        <label class="active-load-label" id="active-reps-label" for="active-reps-input">חזרות שבוצעו בסט</label>
+        <p class="active-load-help" id="active-reps-help">לפני ״סיימתי סט״, עדכנו את המספר לפי הביצוע בפועל. שדה ריק = לא תועד.</p>
+        <div class="active-reps-controls"><div class="active-load-input-wrap"><input id="active-reps-input" type="number" min="1" max="100" step="1" inputmode="numeric" dir="ltr" placeholder="לא תועד" aria-describedby="active-reps-help active-reps-error"><span id="active-reps-unit" aria-hidden="true">חזרות</span></div><span class="active-reps-target" id="active-reps-target"></span></div>
+        <p class="field-error" id="active-reps-error" role="alert" hidden></p>
+        <p class="active-load-current" id="active-reps-current"></p>
+      </section>
+      <section class="active-load-panel" id="active-load-panel" hidden>
+        <label class="active-load-label" id="active-load-label" for="active-load-input">משקל לסט הבא</label>
+        <p class="active-load-help" id="active-load-help"></p>
+        <div class="active-load-controls"><div class="active-load-input-wrap"><input id="active-load-input" type="number" min="0" max="500" step="0.25" inputmode="decimal" dir="ltr" aria-describedby="active-load-help active-load-error"><span aria-hidden="true">ק״ג</span></div><button type="button" class="active-load-save" id="active-load-save" data-active-load-save>עדכון המשקל לסט הבא</button></div>
+        <p class="field-error" id="active-load-error" role="alert" hidden></p>
+        <p class="active-load-current" id="active-load-current" role="status"></p>
+      </section>
+      <section class="active-state-panel" id="active-state-panel" aria-labelledby="active-state-title">
+        <h2 id="active-state-title" aria-live="polite">בקצב שלך</h2>
+        <div class="active-clock" id="active-clock" dir="ltr" role="timer" aria-live="off">00:00</div>
+        <p id="active-state-copy">אפשר להיעזר בהדגמה ובהסבר לפני שמתחילים.</p>
+        <div class="active-timer-actions"><button type="button" class="active-timer-button" id="active-movement-button" data-active-movement>התחלת הטיימר</button><button type="button" class="active-timer-button" id="active-extend-button" data-active-extend hidden>עוד 30 שניות</button></div>
+      </section>
+      <div class="active-demo" id="active-demo"></div>
+      <div class="active-cautions" id="active-cautions"></div>
+      <button type="button" class="text-button active-adaptations-link" data-open-adaptations>כאב או מגבלה? עדכון ההתאמות</button>
+      <details class="active-howto" id="active-howto"><summary><span>איך מבצעים את התרגיל?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"/></svg></summary><div class="active-instructions" id="active-instructions"></div></details>
+      <footer class="active-footer">
+        <p class="workout-storage-note" id="active-storage-note" role="status" hidden></p>
+        <button type="button" class="button button-primary button-wide" id="active-primary-button" data-active-complete>סיימתי סט</button>
+        <div class="active-footer-secondary"><button type="button" class="active-skip-button" id="active-skip-button" data-active-skip>דילוג על התרגיל</button><button type="button" class="active-finish-button" data-active-finish>סיום האימון</button></div>
+      </footer>
+    </section>
+
+    <section class="view training-view workout-result-view" id="view-workout-result" aria-labelledby="result-heading" hidden>
+      <header class="result-header"><div class="small-brand" dir="ltr"><svg aria-hidden="true"><use href="#logo-v"/></svg><span>VEXYRO SPORT</span></div><span class="result-header-label">סיכום האימון</span></header>
+      <div class="result-heading-block"><span class="result-badge" id="result-badge">לפני שמירה</span><h1 id="result-heading" tabindex="-1">האימון שלך, במבט אחד</h1><p id="result-description">זה מה שביצעת עד עכשיו.</p></div>
+      <div class="result-metrics" aria-label="נתוני האימון">
+        <article class="result-metric"><span>זמן אימון</span><strong id="result-time" dir="ltr">00:00</strong></article>
+        <article class="result-metric"><span>תרגילים שהושלמו</span><strong id="result-exercises">0</strong></article>
+        <article class="result-metric"><span>סטים שבוצעו</span><strong id="result-sets">0</strong></article>
+        <article class="result-metric"><span>תרגילים שדולגו</span><strong id="result-skipped">0</strong></article>
+      </div>
+      <p class="result-count-note" id="result-count-note">הסיכום יישמר לאחר האישור שלך.</p>
+      <p class="result-reps-note">אימון מלא מציין שכל הסטים תועדו. החזרות שבוצעו בפועל מוצגות בנפרד מהתכנון.</p>
+      <div class="result-breakdown"><h2>מה בוצע באימון</h2><div class="result-items" id="result-items"></div></div>
+      <section class="v9-achievements" id="v9-achievements" aria-live="polite" hidden></section>
+      <div class="result-actions"><p class="workout-storage-note" id="result-storage-note" role="status" hidden></p><button type="button" class="button button-primary button-wide" id="result-confirm-button" data-result-confirm>אישור ושמירת האימון</button><button type="button" class="button button-secondary button-wide" id="result-return-button" data-result-return>חזרה לאימון</button><button type="button" class="button button-secondary button-wide" id="result-history-button" data-open-history hidden>להיסטוריה ולהתקדמות שלי</button><button type="button" class="text-button" id="result-home-button" data-result-home hidden>חזרה לבית</button></div>
+    </section>
+  </main>
+  <p class="startup-notice" id="startup-notice" role="status" hidden>פותחים את האפליקציה…</p>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
